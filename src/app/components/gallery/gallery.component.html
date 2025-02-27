@@ -1,0 +1,15 @@
+<h3>Fakery Photo Gallery Shit</h3>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let photo of photoArray">
+            <div class="thumbnail">
+                <img src="{{photo.photo_url}}" alt="{{photo.caption}}" width="30%">
+                <div class="caption">
+                    <p>{{photo.caption}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

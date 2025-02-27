@@ -4,13 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ExampleComponent } from './components/example/example.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { GalleryComponent } from './components/gallery/gallery.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     ExampleComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
