@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../service/employee.service';
 import { Employee } from '../../models/employee';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-employees',
@@ -11,7 +12,7 @@ import { Employee } from '../../models/employee';
 export class ListEmployeesComponent implements OnInit {
   employeesList: any;
 
-  constructor(private empSvc: EmployeeService) {}
+  constructor(private empSvc: EmployeeService, private router: Router) {}
 
   ngOnInit(): void {
     this.getEmployees();
@@ -29,6 +30,11 @@ export class ListEmployeesComponent implements OnInit {
     this.empSvc.deleteById(id).subscribe((data: any) => {
       this.getEmployees(); //retrieves the updated database after deletion
     });
+  }
+
+  updateByIdPage(idToUpdate: number){
+    this.router.navigate(['/employee/update'], { queryParams: { id: idToUpdate } }); //{fieldName : value} for queryparam
+    //when clicking this, should redirect to this new form
   }
 
   updateById(id: number, employee: Employee){

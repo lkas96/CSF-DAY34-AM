@@ -12,6 +12,7 @@
                 <td>{{emp.firstName}}</td>
                 <td>{{emp.lastName}}</td>
                 <td>{{emp.emailId}}</td>
+                <td><button (click)="updateByIdPage(emp.id)">Update</button></td>
                 <td><button (click)="deleteById(emp.id)">Delete</button></td>
             </tr>
         </tbody>

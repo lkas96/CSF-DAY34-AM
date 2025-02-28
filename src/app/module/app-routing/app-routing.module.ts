@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListEmployeesComponent } from '../../components/list-employees/list-employees.component';
+import { CreateEmployeeComponent } from '../../components/create-employee/create-employee.component';
+import { GalleryComponent } from '../../components/gallery/gallery.component';
+import { UpdateEmployeeComponent } from '../../components/update-employee/update-employee.component';
 
 const routes: Routes = [
-  // { path: '', component: HomeComponent }, // Default route
-  // { path: 'about', component: AboutComponent }, // /about
+  { path: 'employee/list', component: ListEmployeesComponent }, // show list of all employees
+  { path: 'employee/create', component: CreateEmployeeComponent }, // show create form employee
+  { path: 'employee/update', component: UpdateEmployeeComponent }, //show update form
+  { path: 'gallery', component: GalleryComponent }, // show image ggallery
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
