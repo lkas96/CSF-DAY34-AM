@@ -5,18 +5,26 @@ import { AppComponent } from './app.component';
 import { ExampleComponent } from './components/example/example.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { HttpClientModule } from '@angular/common/http';
-import { GalleryComponent } from './components/gallery/gallery.component'; 
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { ListEmployeesComponent } from './components/list-employees/list-employees.component'; 
+import { AngularMaterialModule } from './module/material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExampleComponent,
     FileUploadComponent,
-    GalleryComponent
+    GalleryComponent,
+    ListEmployeesComponent,
+    CreateEmployeeComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularMaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,19 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employeesList">
+                <td>{{emp.firstName}}</td>
+                <td>{{emp.lastName}}</td>
+                <td>{{emp.emailId}}</td>
+                <td><button (click)="deleteById(emp.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
