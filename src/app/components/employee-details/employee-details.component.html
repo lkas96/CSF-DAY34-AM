@@ -1,0 +1,26 @@
+<h1>Viewing Employee Details</h1>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Emp ID</th>
+                <th>First Name</th>
+                <th>Last</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{selectedEmployee.id}}</td>
+                <td>{{selectedEmployee.firstName}}</td>
+                <td>{{selectedEmployee.lastName}}</td>
+                <td>{{selectedEmployee.emailId}}</td>
+                <td>
+                    <button (click)="updateByIdPage(selectedEmployee.id)">Update</button>
+                    <button (click)="deleteById(selectedEmployee.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

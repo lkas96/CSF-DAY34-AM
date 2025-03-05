@@ -1,19 +1,18 @@
+<h1>All Employees</h1>
 <div>
     <table>
         <thead>
             <tr>
                 <th>First Name</th>
                 <th>Last</th>
-                <th>Email</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let emp of employeesList">
                 <td>{{emp.firstName}}</td>
                 <td>{{emp.lastName}}</td>
-                <td>{{emp.emailId}}</td>
-                <td><button (click)="updateByIdPage(emp.id)">Update</button></td>
-                <td><button (click)="deleteById(emp.id)">Delete</button></td>
+                <td><button (click)="viewDetails(emp.id)">View</button></td>
             </tr>
         </tbody>
     </table>

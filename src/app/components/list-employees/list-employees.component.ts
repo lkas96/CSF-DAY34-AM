@@ -25,21 +25,13 @@ export class ListEmployeesComponent implements OnInit {
     });
   }
 
-  deleteById(id: number) {
-    console.log("id selected to delete is : ", id);
-    this.empSvc.deleteById(id).subscribe((data: any) => {
-      this.getEmployees(); //retrieves the updated database after deletion
-    });
-  }
+  // updateById(id: number, employee: Employee){
+  //   this.empSvc.update(id, employee).subscribe((data: any) => {
+  //     this.getEmployees(); //force refresh
+  //   })
+  // }
 
-  updateByIdPage(idToUpdate: number){
-    this.router.navigate(['/employee/update'], { queryParams: { id: idToUpdate } }); //{fieldName : value} for queryparam
-    //when clicking this, should redirect to this new form
-  }
-
-  updateById(id: number, employee: Employee){
-    this.empSvc.update(id, employee).subscribe((data: any) => {
-      this.getEmployees(); //force refresh
-    })
+  viewDetails(idToView: number){
+    this.router.navigate(['/employee/view'], {queryParams: {id: idToView}});
   }
 }

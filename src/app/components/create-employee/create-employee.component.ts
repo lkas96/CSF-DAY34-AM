@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Employee } from '../../models/employee';
 import { EmployeeService } from '../../service/employee.service';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: false,
@@ -10,10 +11,11 @@ import { EmployeeService } from '../../service/employee.service';
   styleUrl: './create-employee.component.css'
 })
 export class CreateEmployeeComponent implements OnInit {
+  
   form!: FormGroup;
   employee!: Employee;
 
-  constructor(private employeeSvc: EmployeeService) { }
+  constructor(private employeeSvc: EmployeeService, private router: Router) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -30,6 +32,10 @@ export class CreateEmployeeComponent implements OnInit {
     console.log(this.employee);
 
     this.saveEmployee();
+
+    //redirect to this url endpoint
+    //so after create and submit form, will show the employees list
+    this.router.navigate(['employee/list']);
   }
 
   saveEmployee() {
